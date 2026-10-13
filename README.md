@@ -93,12 +93,4 @@ The top module starts `axi4_long_test`. To run another test, change the name in 
 - **Single seed.** The 100% coverage figure covers only the bins defined in the covergroup.
 - **Logging is mixed.** Some components use `uvm_info` and others use `$display`.
 
-## How to Overcome
 
-- Generate `len = 0` for FIXED and INCR, and add a separate single-beat coverage bin.
-- Add a write followed by a full-word read-back over a known background pattern, to check disabled lanes.
-- Add random ready/valid delays in the driver, and later a reactive responder and overlapped AW/W.
-- Check `bresp`, `rresp`, `rid` and the `wlast`/`rlast` positions in the scoreboard and monitor.
-- Add error-injection sequences and out-of-range access tests.
-- Run multi-seed regressions and merge coverage.
-- Move to `uvm_info` and `uvm_error` everywhere, and wrap the classes in a package.
